@@ -1,0 +1,19 @@
+this.onLeftButtonClick = function(wrapperElement){
+        this.left.onclick = function(){
+            var counter = 0;
+            var interval = setInterval(function(){
+                var left = wrapperElement.style.left;
+        
+                wrapper_left_pos = parseInt(left.substring(0,left.length-2));
+                    if(wrapper_left_pos== (this.wrapperWidth-50)){
+                        wrapperElement.style.left= 0 +'px';
+                        wrapper_left_pos = wrapperElement.style.left;
+                    }
+                wrapperElement.style.left = (wrapper_left_pos-50)+ 'px';
+                counter++;
+                if(counter>=10){
+                    clearInterval(interval);
+                }
+            },100);
+        }
+    }
